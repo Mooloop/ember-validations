@@ -29,4 +29,4 @@ Ember.Validations.validators.local.Email = Ember.Validations.validators.Base.ext
   }
 });
 
-Ember.Validations.messages.default.email = "is not a valid email address";
+Ember.Validations.messages.defaults.email = "is not a valid email address";
