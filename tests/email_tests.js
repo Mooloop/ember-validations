@@ -47,6 +47,14 @@ test('when valid email', function() {
   deepEqual(validator.errors, []);
 });
 
+test('when valid email with upper case characters', function() {
+  Ember.run(function() {
+    validator = Ember.Validations.validators.local.Email.create({model: model, property: 'attribute', options: options});
+    model.set('attribute', 'USER&user+label@example.com');
+  });
+  deepEqual(validator.errors, []);
+});
+
 test('when email has space', function() {
   options = { 'message': 'failed validation' };
   Ember.run(function() {

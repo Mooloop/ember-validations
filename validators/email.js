@@ -23,7 +23,7 @@ Ember.Validations.validators.local.Email = Ember.Validations.validators.Base.ext
       if (this.get('options.allowBlank') !== true) {
         this.errors.pushObject(this.get('options.message'));
       }
-    } else if (!this.regexp.test(email)) {
+    } else if (!this.regexp.test(email.toLowerCase())) {
       this.errors.pushObject(this.get('options.message'));
     }
   }
